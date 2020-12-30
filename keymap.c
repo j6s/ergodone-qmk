@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
+#include "sendstring_colemak.h"
 
 #define L0 0
 #define L1 1
@@ -19,6 +20,12 @@ enum custom_keycodes {
  * You can however build a keyboard emulation layer to emulate your
  * keyboard layout in hardware when the keyboard is being used on a
  * PC set to QWERTY.
+ * 
+ * This could be resolved by using `keymap_colemak.h` but that will make
+ * the layout less portable in the end. Thus, this keyboard layout is
+ * built for QWERTY despite being used in colemak. A notable excludsion is
+ * `sendstring_colemak.h` which is being included in order for the `SEND_STRING`
+ * macro to be used with colemak.
  */
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
