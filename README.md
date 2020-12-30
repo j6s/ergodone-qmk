@@ -16,3 +16,7 @@ automatically when building.
 Use `$ make build` to build the firmware and use `$ make flash` to flash it.
 Similarly, use `$ make rebuild` and `$ make reflash` to rebuild & reflash
 the firmware
+
+The setup assumes that
+* You are running linux
+* You have docker installed
