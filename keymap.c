@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "version.h"
 #include "sendstring_colemak.h"
 
 #define L0 0
