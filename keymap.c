@@ -198,34 +198,31 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 /*
  * Runs just one time when the keyboard initializes.
  */
-void matrix_init_user(void) {};
+void matrix_init_user(void) {
+    ergodox_board_led_off();
+    ergodox_right_led_1_off();
+    ergodox_right_led_2_off();
+    ergodox_right_led_3_off();
+};
 
 /*
  * Runs constantly in the background, in a loop.
  * 
- * TODO: Figure out how to adress LEDs
- *       in order to indicate the currently active
- *       layer. The default code did not work.
+ * NOTE: LED 1, 2 & 3 refer to optional LEDs that can be soldered to the
+ *       microcontroller that aren't there by default - Only the board LED
+ *       is there by default.
  */
 void matrix_scan_user(void) {
+    uint8_t layer = biton32(layer_state);
 
-
-    // uint8_t layer = biton32(layer_state);
-
-    // ergodox_board_led_off();
-    // ergodox_right_led_1_off();
-    // ergodox_right_led_2_off();
-    // ergodox_right_led_3_off();
-    // switch (layer) {
-    //     case 0:
-    //         ergodox_right_led_1_on();
-    //         break;
-    //     case 1:
-    //         ergodox_right_led_2_on();
-    //         break;
-    //     default:
-    //         // none
-    //         break;
-    // }
+    switch (layer) {
+        case L1:
+            ergodox_board_led_on();
+            break;
+        case L0:
+        default:
+            ergodox_board_led_off();
+            break;
+    }
 
 };
