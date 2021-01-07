@@ -103,11 +103,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   *                                 `--------------------'       `--------------------'
   */
 [L1] = LAYOUT_ergodox(
-       KC_TILDE,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,
-       _______,   _______,  KC_BTN1,  KC_MS_U,  KC_BTN2,  _______,  _______,
+       KC_GRAVE,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,
+       _______,   _______,  KC_BTN1,  KC_MS_U,  KC_BTN2,  _______,  CUSTOM_TEST_KEY,
        _______,   _______,  KC_MS_L,  KC_BTN1,  KC_MS_R,  _______,
        _______,   _______,  _______,  KC_MS_D,  _______,  _______,  _______,
-       CUSTOM_TEST_KEY,   _______,  _______,  _______,  _______,
+       _______,   _______,  _______,  _______,  _______,
 
                                                           _______,  _______,
                                                                     _______,
