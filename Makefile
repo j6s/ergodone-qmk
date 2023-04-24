@@ -29,7 +29,7 @@ fullclean:
 
 ${QMK_DIR}:
 	git clone https://github.com/qmk/qmk_firmware.git ${QMK_DIR} --recursive
-	cd ${QMK_DIR}/keyboards/ergodone/keymaps && ln -s ../../../../ ${KEYMAP_NAME}
+	cd ${QMK_DIR}/keyboards/ktec/ergodone/keymaps && ln -s ../../../../ ${KEYMAP_NAME}
 
 ${TKG_DIR}:
 	git clone https://github.com/kairyu/tkg-toolkit ${TKG_DIR} --recursive
@@ -48,5 +48,5 @@ ${FIRMWARE_HEX}: | ${QMK_DIR}
 		-w /build/qmk_firmware \
 		-e ALT_GET_KEYBOARDS=true \
 		qmkfm/base_container \
-		make "ergodone:${KEYMAP_NAME}"
+		make "ktec/ergodone:${KEYMAP_NAME}"
 
